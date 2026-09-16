@@ -26,7 +26,6 @@ run_command() {
 
     TARGET_CMD_EXIT_STAT="$?"
     if [ "$TARGET_CMD_EXIT_STAT" != "0" ]; then
-        echo -e "${RED}[!!] エラー: コマンドが失敗しました。戻り値: $TARGET_CMD_EXIT_STAT $RESET"
         echo -e "${RED}[!!] ERROR: Command failed. return: $TARGET_CMD_EXIT_STAT $RESET"
         exit 1
     fi
@@ -46,8 +45,7 @@ main() {
     setup_color
     prepare_env
     
-    echo -e "ビルドを開始..."
-    echo -e "Try to build..."
+    echo -e "Starting build..."
     run_command ". build/envsetup.sh"
 
     run_command "lunch ${DEFAULT_LINEAGE_OR_CM}_${TARGET_DEVICE}-${DEFAULT_COMBO}"
@@ -59,10 +57,7 @@ main() {
     fi
 
     run_command "brunch ${TARGET_DEVICE}"
-
-    
-    echo -e "${BLUE}[OK] ビルドが成功しました ${RESET}" 
-    echo -e "${BLUE}[OK] Build successfully ${RESET}"
+    echo -e "${BLUE}Build successfull ${RESET}"
 
 }
 
