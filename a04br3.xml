@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="coara-chocomaru/Lineage14.1-TAB-A04-BR3" path="device/sts/a04br3" remote="github" revision="test" />
+  <project name="coara-chocomaru/a04br3-vendor" path="vendor/sts/a04br3" remote="github" revision="main2" />
+</manifest>
