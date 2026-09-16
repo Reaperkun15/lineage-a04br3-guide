@@ -30,6 +30,13 @@ sudo sed -i 's/, TLSv1, TLSv1.1//g; s/TLSv1, TLSv1.1, //g' /etc/java-8-openjdk/s
 git config --global user.name "android"
 git config --global user.email "android"
 
+git clone https://github.com/Reaperkun15/lineage-a04br3-guide.git
+cp lineage-a04br3-guide/autobuild.sh ~/lineage-builder/autobuild.sh
+chmod a+x ~/lineage-builder/autobuild.sh
+
+mkdir -p .repo/local_manifests
+cp lineage-a04br3-guide/a04br3.xml .repo/local_manifests/a04br3.xml
+
 
 ```
 
