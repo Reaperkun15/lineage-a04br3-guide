@@ -1,16 +1,12 @@
 #!/usr/bin/bash
 
 SCRIPT_ARGS="$1"
-DEFAULT_COMBO="eng"
+DEFAULT_COMBO="userdebug"
 DEFAULT_LINEAGE_OR_CM="lineage"
 TARGET_DEVICE="a04br3"
 
 if [ "$SCRIPT_ARGS" = "--clean" ]; then
     FORCE_CLEAN="true"
-elif [ "$SCRIPT_ARGS" = "--bootimage" ]; then
-    TARGET_FILE="bootimage"
-else
-    TARGET_FILE="OTA"
 fi
 
 
@@ -62,11 +58,8 @@ main() {
         exit 0
     fi
 
-    if [ "$TARGET_FILE" = "OTA" ]; then
-        run_command "brunch ${TARGET_DEVICE}"
-    elif [ "$TARGET_FILE" = "bootimage" ]; then
-        run_command "make bootimage"
-    fi
+    run_command "brunch ${TARGET_DEVICE}"
+
     
     echo -e "${BLUE}[OK] ビルドが成功しました ${RESET}" 
     echo -e "${BLUE}[OK] Build successfully ${RESET}"
