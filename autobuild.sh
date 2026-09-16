@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 SCRIPT_ARGS="$1"
 DEFAULT_COMBO="userdebug"
